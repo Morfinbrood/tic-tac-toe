@@ -20,9 +20,7 @@ class TicTacToe {
       this.matrix[rowIndex][columnIndex] = this.getCurrentPlayerSymbol();
       this.switchSymbol();
       this.chkWinner();
-      return true;
-    } else
-      return false;
+    }
   }
 
   switchSymbol() {
@@ -53,7 +51,6 @@ class TicTacToe {
     if ((this.matrix[0][2] == this.matrix[1][1]) && (this.matrix[1][1] == this.matrix[2][0]) && (this.matrix[1][1] != null))
       this.winner = this.matrix[1][1];
   }
-
 
   getWinner() {
     return this.winner;
