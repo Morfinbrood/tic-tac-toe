@@ -15,7 +15,7 @@ class TicTacToe {
   }
 
   nextTurn(rowIndex, columnIndex) {
-    if (this.matrix[rowIndex][columnIndex] == null) {
+    if (!this.isFinished() && this.matrix[rowIndex][columnIndex] == null) {
       this.turn++;
       this.matrix[rowIndex][columnIndex] = this.getCurrentPlayerSymbol();
       this.switchSymbol();
