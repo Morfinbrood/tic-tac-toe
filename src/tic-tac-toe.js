@@ -15,7 +15,7 @@ class TicTacToe {
   }
 
   nextTurn(rowIndex, columnIndex) {
-    if (!this.isFinished() && this.matrix[rowIndex][columnIndex] == null) {
+    if (!this.isFinished() && !this.noMoreTurns() && this.matrix[rowIndex][columnIndex] == null) {
       this.turn++;
       this.matrix[rowIndex][columnIndex] = this.getCurrentPlayerSymbol();
       this.switchSymbol();
@@ -39,7 +39,7 @@ class TicTacToe {
   }
 
   chkWinner() {
-    for (let i = 2; i >= 0; i--) {
+    for (let i = 0; i < 3; i++) {
       if (this.matrix[i][0] == this.matrix[i][1] && this.matrix[i][1] == this.matrix[i][2] && this.matrix[i][1] != null)
         this.winner = this.matrix[i][0];
       if (this.matrix[0][i] == this.matrix[1][i] && this.matrix[1][i] == this.matrix[2][i] && this.matrix[1][i] != null)
