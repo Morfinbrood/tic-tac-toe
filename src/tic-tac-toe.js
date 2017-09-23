@@ -32,7 +32,7 @@ class TicTacToe {
   }
 
   isFinished() {
-    if ((this.winner != null) || (this.isDraw()))
+    if (this.winner != null || this.isDraw())
       return true;
     else
       return false;
@@ -40,15 +40,14 @@ class TicTacToe {
 
   chkWinner() {
     for (let i = 2; i >= 0; i--) {
-      if ((this.matrix[i][0] == this.matrix[i][1]) && (this.matrix[i][1] == this.matrix[i][2]) && (this.matrix[i][1] != null))
+      if (this.matrix[i][0] == this.matrix[i][1] && this.matrix[i][1] == this.matrix[i][2] && this.matrix[i][1] != null)
         this.winner = this.matrix[i][0];
-      if ((this.matrix[0][i] == this.matrix[1][i]) && (this.matrix[1][i] == this.matrix[2][i]) && (this.matrix[1][i] != null))
+      if (this.matrix[0][i] == this.matrix[1][i] && this.matrix[1][i] == this.matrix[2][i] && this.matrix[1][i] != null)
         this.winner = this.matrix[0][i];
     }
-
-    if ((this.matrix[0][0] == this.matrix[1][1]) && (this.matrix[1][1] == this.matrix[2][2]) && (this.matrix[1][1] != null))
+    if (this.matrix[0][0] == this.matrix[1][1] && this.matrix[1][1] == this.matrix[2][2] && this.matrix[1][1] != null)
       this.winner = this.matrix[1][1];
-    if ((this.matrix[0][2] == this.matrix[1][1]) && (this.matrix[1][1] == this.matrix[2][0]) && (this.matrix[1][1] != null))
+    if (this.matrix[0][2] == this.matrix[1][1] && this.matrix[1][1] == this.matrix[2][0] && this.matrix[1][1] != null)
       this.winner = this.matrix[1][1];
   }
 
