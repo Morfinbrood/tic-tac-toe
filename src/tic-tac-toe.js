@@ -89,6 +89,10 @@ class TicTacToe {
       return false;
     }
   }
+
+  getFieldValue(rowIndex, colIndex) {
+    return this.matrix[rowIndex][colIndex];
+  }
 }
 
 module.exports = TicTacToe;
